@@ -1,16 +1,14 @@
+// // const { coffeeStock, isCoffeeMachineReady } = require("./state");
 import { coffeeStock, isCoffeeMachineReady } from "./state.js";
-// const { coffeeStock, isCoffeeMachineReady } = require("./state");
-
-//type=key; miligrams=value
-const makeCoffee = (type, miligrams) => {
-  if (coffeeStock[type] >= miligrams) {
+const makeCoffee = (type, mg) => {
+  if (coffeeStock[type] >= mg) {
     console.log("Kopi berhasil dibuat!");
   } else {
     console.log("Biji kopi habis!");
   }
 };
-
-makeCoffee("robusta", 800);
+makeCoffee("arabica", 10);
+console.log(makeCoffee);
 
 const displayStock = (object) => {
   for (const property in object) {
