@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      class ValidationError extends Error {
+        constructor(message) {
+          super(message);
+          this.name = "ValidationError";
+        }
+      }
+
+      const validateNumberInput = (a, b, c) => {
+        if (isNaN(a) || a == null || a == 0) {
+          throw new ValidationError("Argumen pertama harus number");
+        }
+        if (isNaN(b) || b == null || b == 0) {
+          throw new ValidationError("Argumen kedua harus number");
+        }
+        if (isNaN(c) || c == null || c == 0) {
+          throw new ValidationError("Argumen ketiga harus number");
+        }
+        return true;
+      };
+
+      const detectTriangle = (a, b, c) => {
+        // TODO 3
+
+        try {
+          if (validateNumberInput(a, b, c)) {
+            if (a === b && b === c) {
+              return "Segitiga sama sisi";
+            }
+
+            if (a === b || a === c || b === c) {
+              return "Segitiga sama kaki";
+            }
+
+            return "Segitiga sembarang";
+          }
+        } catch (error) {
+          return error.message;
+        }
+      };
+      const a = detectTriangle(0, null, false);
+
+      console.log(a);
+    </script>
+  </body>
+</html>
