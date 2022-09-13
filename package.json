@@ -3,11 +3,18 @@
   "version": "1.0.0",
   "description": "mesin kopi dicoding",
   "main": "index.js",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "jest",
+    "start": "node index.js",
+    "utest": "node gradeCalculations.js"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "jest": "^29.0.3"
+  }
 }
